@@ -1,0 +1,27 @@
+<% if(success && success.length) {%>
+    <div class = "alert alert-success alert fade-alert show col-6 offset-4 mb-0" rol=" alert">
+        <%= success %>
+        <!-- <button type = "button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button> -->
+    </div>
+    <%}%>
+
+
+    <% if(error && error.length) {%>
+      <div class = "alert alert-danger alert fade-alert show col-6 offset-3 " rol=" alert">
+          <%= error %>
+          <button type = "button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
+      </div>
+      <%}%>
+      
+
+<!-- Add the script for closing the alert automatically -->
+<script>
+     // Automatically close the alert after 3 seconds
+  window.setTimeout(function() {
+    document.querySelectorAll('.alert').forEach(function(alert) {
+      new bootstrap.Alert(alert).close();
+    });
+  }, 5000);
+  </script>
+ 
+  

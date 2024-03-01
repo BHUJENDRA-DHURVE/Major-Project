@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% layout("/layouts/boilerplate.ejs") -%>
+<body>
+    <div class="row">
+        <div class="col-7 offset-2">
+
+    <h3>Create new listing</h3>
+    <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data" >
+        <div>
+        <label for="" class="form-label">Title</label>
+        <input type="text" name="listing[title]" placeholder="Enter Title" class="form-control" required />
+        </div>
+        <br>
+        <div>
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" name="listing[description]" placeholder="Enter Description" class="form-control" required></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="description" class="form-label">Upload Image</label>
+            <input type="file" name="listing[image]" placeholder="select file" class="form-control" />
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                <label for="description" class="form-label">Price</label>
+                <input type="number" name="listing[price]" placeholder="Enter Price" class="form-control" required/>
+            </div>
+            <br>
+            <div class="col-8">
+                <label for="description" class="form-label">Country</label>
+                <input type="text" name="listing[country]" placeholder="Enter Country" class="form-control" required />
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="description" class="form-label">Location</label>
+            <input type="text" name="listing[location]" placeholder="Enter Location" class="form-control" required />
+        </div>
+        <br>
+        <button class="btn btn-dark" >Add</button>
+        <br>
+        <br>
+    </form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+<style>
+  .btn-search{
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+  .btn-search:hover{
+    background-color: #fe424d;
+    color: #fff;
+  }
+  .btn-search i{
+    display: inline;
+  }
+  .search-inp{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    font-size: 0.8;
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="/listings"><i class="fa-solid fa-paper-plane"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        <b> <a class="nav-link" href="/listings">Explorer</a></b>
+        </div>
+        
+      </div>
+      <div class="navbar-nav m-lg-4 ">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search Destination" aria-label="Search">
+          <button class="btn btn-outline-success btn-search" type="submit">
+            <i class="fa-solid fa-magnifying-glass "></i>Search
+          </button>
+        </form>
+      </div>
+    <b><a class="nav-link m-lg-2" href="/listings/new">Airbnb your home</a></b>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <i class="fas fa-power-off" style="color: #70c51b;"></i>
+        </button>
+        
+        <ul class="dropdown-menu m-auto">
+
+          <% if(!currUser){%>
+          <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+          <li><a class="dropdown-item" href="/login">Log in</a></li>
+          <%}%>
+          <% if(currUser) {%>
+          <li><a class="dropdown-item" href="/logout">Log out</a></li>
+          <%}%>
+        </ul>
+      </div>
+    </div>
+  </nav>
