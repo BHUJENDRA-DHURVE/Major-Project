@@ -95,6 +95,13 @@ app.use((req,res,next)=>{
   next();
 })
 
+// Mount userRouter at the /signup route, but only if the user is not authenticated
+app.use("/signup", (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return res.redirect("/login"); // Redirect to login if already signed in
+  }
+  next(); // Continue to signup route if not signed in
+}, userRouter);
 
 
 app.use("/listings",listingRouter);
